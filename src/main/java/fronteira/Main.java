@@ -4,7 +4,9 @@ package fronteira;
 import java.util.List;
 import java.util.Scanner;
 
+import controller.AtorController;
 import controller.FilmeController;
+import model.Ator;
 import model.Filme;
 
 public class Main {
@@ -12,9 +14,15 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+		
 		String nomeFilme;
 		Filme f1 = new Filme ( );
 		FilmeController fControl = new FilmeController();
+		
+		String nomeAtor;
+		Ator a1 = new Ator();
+		AtorController aControl = new AtorController();
+		
 		int escolha;
 
 		do {
@@ -84,8 +92,9 @@ public class Main {
 				break;	
 			case 6:
 				System.out.println("Inserir ator ");
-//				long id = scanner.nextLong();
-//				fControl.apagar(id);
+				nomeAtor = scanner.next();
+				a1.setNome(nomeAtor); 
+				aControl.inserirAtor(a1);
 				break;
 			case 7:
 				System.out.println("Escolha um ator para apagar ");
